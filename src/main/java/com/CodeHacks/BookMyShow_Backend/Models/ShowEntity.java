@@ -1,6 +1,8 @@
 package com.CodeHacks.BookMyShow_Backend.Models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -13,6 +15,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "shows")
+@Builder
+@AllArgsConstructor
 @Data
 @NoArgsConstructor
 public class ShowEntity {
@@ -24,6 +28,9 @@ public class ShowEntity {
     private LocalDate showDate;
 
     private LocalTime showTime;
+
+    private double multiplier;
+
 
     @CreationTimestamp
     private Date CretatedOn;
